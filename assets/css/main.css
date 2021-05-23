@@ -132,7 +132,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #444;
-		font-weight: 800;
+		font-weight: 400;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1944,7 +1944,7 @@ input, select, textarea {
 			font-family: 'Oleo Script', serif;
 			font-weight: 400;
 			padding: 0.25em 0.2em 0.25em 0.2em;
-			font-size: 3.25em;
+			font-size: 2.25em;
 			letter-spacing: 0.05em;
 			display: inline-block;
 			vertical-align: middle;
