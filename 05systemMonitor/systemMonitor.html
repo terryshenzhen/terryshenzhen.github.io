@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+
+-->
+<html>
+	<head>
+		<title>by wang001</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload no-sidebar">
+		
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a >systemMonitor(磁盘空间监测工具)</a></h1>
+							</div>
+
+					</header>
+				</div>
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div id="content">
+
+							<!-- Content -->
+								<article>
+<font size="5" color="black">
+									<p>  
+
+<br>
+                                                <br>使用说明<br><br>
+目的：<br>
+        systemMonitor(磁盘空间监测工具)是一款监控运行环境和硬盘空间工具，当空间过小时，删除部分数据文件释放空间。<br>
+使用方法：<br>
+        点击.bat文件运行程序；<br><br>
+
+软件功能：<br><br>
+
+监控硬盘：<br>
+1.监控硬盘空间，当空间小于设置的阈值时，删除操作目录中的文件夹，按照文件名的顺序删除，直到剩余空间大于阈值。<br>
+2.每隔一段时间监测一次。<br>
+3.参数都由程序设置好，用户只需运行程序，不能进行参数设置。<br><br>
+
+
+程序其他特点和注意事项：<br>
+1. 支持程序开机自动运行，且禁止用户自行关闭；<br>
+2. 支持“管理权限”。为管理员使用，用户不需关注；-------->关闭程序or取消开机自运行<br>
+3. 支持配置管理。注意：由于程序有删除动作，为避免危及用户设备数据，必须要管理员进行配置。这些配置项包括监测磁盘，监测间隔，监测目录，阈值-------->配置硬盘监测参数<br>
+4.监测电脑运行状态和操作。-------->看是否有人操作过电脑，及开关机状态<br>
+5.监测网络。 -------->监测网络是否连通<br><br>
+
+配置说明：<br>
+	同目录下的 diskSpaceMonitorConfig.ini 为配置文件，用户可以根据实际情况进行修改，说明如下：<br>
+Drive_path=D:/---------------待监测的磁盘<br>
+detectedDir=D:/data----------待监测的目录，如磁盘空间小于阈值，则删除此目录下的子目录，<br>
+按名字排序，例如以日期时间命名，则优先删除日期时间较老的目录，直到剩余磁盘空间大于阈值。<br>
+sPaceRemain_MB=70000---------阈值，MB为单位。该值除以1024就为GB单位<br>
+checkInterval_sec=600--------监测时间间隔。单位：秒。如果需要频繁监测，可以<br>
+改小。比如改为1就是1秒检测一次。如不需要频繁监测，则可以改大，如3600表示一小时检测一次。<br><br>
+
+运行系统：windows<br>
+
+<br>
+说明：<br>
+  本软件仅供娱乐，学习使用。切不可用于商业目的。保护知识产权，人人有责。<br>
+作者：825772667@qq.com<br>
+<p>=====================================</p>
+
+systemMonitor(磁盘空间监测工具)下载链接1：
+<a href="https://pan.baidu.com/s/1TdeCzABYMEnP9wE_tMZuAw"><font size="13" color="blue">点击下载1</font></a></br>
+提取码：aaaa 
+
+<p>=====================================</p>
+
+systemMonitor(磁盘空间监测工具)下载链接2：
+<a href="https://cloud.189.cn/t/yqURNv7ZRjum"><font size="13" color="blue">点击下载2</font></a></br>
+<p>=====================================</p>
+</p>
+
+
+</font>
+								</article>
+
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+			
+	
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy;  All rights reserved</li><li>Design: <a href="mailto:825772667@qq.com">825772667@qq.com</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
