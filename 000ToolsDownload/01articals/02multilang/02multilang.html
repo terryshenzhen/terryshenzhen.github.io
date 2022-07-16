@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+
+-->
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+<div style="text-align:right;">
+	<a href="http://zzzbbb001_admin.gitee.io/"><strong><span style="color:#003399;font-size:14px;">&lt;&lt; 返回主页</span></strong></a>
+</div>
+
+<html>
+
+
+
+<p style="font-size:20px;font-family:&quot;background-color:#FFFFFF;">
+	<span style="vertical-align:middle;color:#000000;">Qt支持多国语言（本地化，国际化）</span> 
+</p>
+
+	<br />
+
+
+<p style="font-family:&quot;font-size:14px;background-color:#EEEEEE;">
+	<span style="font-size:16px;">实现方法：</span> 
+</p>
+<p style="font-family:&quot;font-size:14px;background-color:#EEEEEE;">
+	<span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为了支持国际化最关键的地方是制作多国语言包，然后再实现动态切换。</span> 
+</p>
+<p style="font-family:&quot;font-size:14px;background-color:#EEEEEE;">
+	<span style="font-size:16px;">QT里面既能够採用命令行也能够採用Qt Creator的界面操作来生成。这里我们利用Qt Creator来生成多国语言包。基本流程是，先生成ts文件。然后生成qm文件，最后通过QTranslator类来载入qm文件，实现多语言包的切换。</span> 
+</p>
+<p style="font-family:&quot;font-size:14px;background-color:#EEEEEE;">
+	<span style="font-size:16px;">注意：为了更全面地实现多语言包，在程序中全部涉及到界面中的button或者菜单中的文字显示，都必须使用 QObject::tr("...") 的方式将显示的内容包裹起来，这样做的原因是：仅仅有加入了QObject::tr()的标记。生成ts文件的时候程序才会觉得被QObject::tr()包裹的地方是须要制作多语言的，从而在ts中预留出位置。</span> 
+</p>
+<span style="font-size:16px;"></span> 
+<p>
+	<br />
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+	<span style="color:#000000;font-size:14px;">1、创建语言文件------生成.ts文件</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">　　打开.pro文件，加入以下（pro中命名最好不要随便命名）：</span><br />
+<br />
+<span> </span> 
+</p>
+<pre><span style="color:#800080;">TRANSLATIONS</span><span style="color:#c0c0c0;"> </span>=<span style="color:#c0c0c0;"> </span>lang_zh.ts<span style="color:#c0c0c0;"> </span>\</pre>
+<pre><span style="color:#c0c0c0;"> </span>lang_en.ts</pre>
+<span style="color:#000000;font-size:14px;"> 生成.ts :</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">　　工具-&gt;外部-&gt;Qt语言家-&gt;更新翻译,将生成翻译文件cn.ts</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">2、编辑翻译文件------对.ts文件进行翻译</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">　　启动Linguist（Qt语言家)，打开cn.ts，然后进行编辑，主要是将源文对应的译文填写上，最后保存</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">3、部署翻译文件------生成.qm文件</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">　　工具-&gt;外部-&gt;Qt语言家-&gt;部署翻译,将生成语言文件qm</span><br />
+<br />
+<span style="color:#000000;font-size:14px;">4、加载翻译文件</span><br />
+<span style="color:#000000;font-size:14px;">加载时，这一点很重要： 4.重载void changeEvent(QEvent *e); 对语言改变事件进行处理</span> 
+<p>
+</p>
+
+<span style="color:#000000;font-size:14px;">关键词：Qt支持多国语言 本地化 国际化 多语言</span><br />
+
+<pre><span style="color:#808000;">例如：</span></pre>
+<pre><span style="color:#808000;">void</span><span style="color:#c0c0c0;"> </span><span style="color:#800080;">Widget_multiLanguage</span>::<span style="font-weight:600;font-style:italic;color:#00677c;">changeEvent</span>(<span style="color:#800080;">QEvent</span><span style="color:#c0c0c0;"> </span>*<span style="color:#092e64;">e</span>)</pre>
+<pre>{</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#008000;">//</span><span style="color:#c0c0c0;"> </span><span style="color:#008000;">MainWindow::changeEvent(e);</span></pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#808000;">switch</span><span style="color:#c0c0c0;"> </span>(<span style="color:#092e64;">e</span>-&gt;<span style="color:#00677c;">type</span>())</pre>
+<pre><span style="color:#c0c0c0;"> </span>{</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#808000;">case</span><span style="color:#c0c0c0;"> </span><span style="color:#800080;">QEvent</span>::<span style="color:#800080;">LanguageChange</span>:</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#000080;">qDebug</span>()<span style="color:#c0c0c0;"> </span><span style="color:#00677c;">&lt;&lt;</span><span style="color:#c0c0c0;"> </span><span style="color:#008000;">"changeEvent"</span><span style="color:#c0c0c0;"> </span><span style="color:#00677c;">&lt;&lt;</span><span style="color:#c0c0c0;"> </span><span style="color:#092e64;">e</span>-&gt;<span style="color:#00677c;">type</span>();</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#00677c;">init111</span>();</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#800000;">ui</span>-&gt;<span style="color:#00677c;">retranslateUi</span>(<span style="color:#808000;">this</span>);</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#808000;">break</span>;</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#808000;">default</span>:</pre>
+<pre><span style="color:#c0c0c0;"> </span><span style="color:#808000;">break</span>;</pre>
+<pre><span style="color:#c0c0c0;"> </span>}</pre>
+<pre>}</pre>
+<pre></pre>
+<span style="color:#000000;font-size:14px;"></span> 
+<p>
+	<br />
+</p>
+<div>
+	<br />
+</div>
+<div class="cnblogs_Highlighter">
+	<div id="highlighter_765056" class="syntaxhighlighter nogutter  csharp" style="margin:1em 0px !important;font-size:1em !important;">
+	</div>
+</div>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+
+
+
+
+
+
+
+<img src="./APP_mainUI.gif"\/>
+
+
+
+
+
+
+
+<li>&copy;  All rights reserved</li><li>Design: <a href="mailto:825772667@qq.com">825772667@qq.com</a></li>
+
+</html>

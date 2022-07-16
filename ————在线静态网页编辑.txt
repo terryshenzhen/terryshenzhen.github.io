@@ -1,0 +1,36 @@
+
+
+————在线静态网页编辑
+https://zaixianwangyebianji.bmcx.com/
+
+
+网页在IE中乱码，firefox中却不会：
+
+在<head>标签里增加
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+
+
+
+插入视频：
+<p>
+	使用指导视频：&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+</p>
+<br />
+<iframe src="https://www.bilibili.com/video/BV18Y411N7Tj?spm_id_from=333.999.0.0&vd_source=f2a20f3819fa6934ca6ec995b8700bf3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px; height: 430px; max-width: 100%"> </iframe>
+<br />
+
+
+百度网盘免密码：
+
+我们获取下载链接后在后面加?pwd=提取码
+
+示例：https://pan.baidu.com/s/1P52BOk4t1zVKdu6RumcBwA?pwd=vbrm
+
+这样我们复制链接分享出去，点链接会自动帮输入提取码跳转！
+
+https://pan.baidu.com/s/1-wNmxBvli9yHfXWIiv6KSQ?pwd=aaaa
+
+
+

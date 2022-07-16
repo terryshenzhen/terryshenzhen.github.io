@@ -1,0 +1,67 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<br />
+<strong>目的：通过在web端提交升级的版本号文件，让程序检测有无新版本，然后跳转到下载页面。</strong><br />
+<br />
+<strong>知识点：</strong>在线升级，库制作，SSL<br />
+1.<br />
+生成静态库 upgade001.lib<br />
+2.web端配置<br />
+3.数据定义和解析<br />
+4.SSL支持<br />
+<br />
+<br />
+使用时，<strong>有几个地方调用</strong>：<br />
+<span> </span>初始化<br />
+<span> </span>反初始化<br />
+<span> </span>升级检测： pUpgader001-&gt;upgrageCheck();<br />
+<span> </span>过期检测： pUpgader001-&gt;ifForceLockCheck();<br />
+<br />
+使用的APP传入<strong>2个参数</strong>：APP名称，当前的版本号<br />
+<br />
+1.版本检测：<br />
+<span> </span>web端提供 APP名称，最新版本号， 如果web端版本号大，则提示更新。同时，<br />
+<span> </span>web端提供升级的地址，供跳转，用户无需提供升级地址。<br />
+<br />
+2.过期检测<br />
+<span> </span>web端提供标志位，只要用户调用过期检测接口即可实现检测。<br />
+<br />
+<strong>Web端</strong>一个配置示例：<br />
+{sysmonitor;1.1;false;https://zzzbbb001_admin.gitee.io/000swDownload/008systemMonitor/systemMonitor.html;false;disableuse}<br />
+<br />
+<br />
+升级<strong>规范</strong>：格式为：<br />
+{name;version;forceupgrade;url;forceLock}&nbsp;<br />
+name----app名称；<br />
+version--app版本号；<br />
+forceupgrade是否强制升级。强制升级时，用户如果不升级则无法进入软件；没有强制升级时，<br />
+用户可以自由选择；<br />
+url------需要链接进去的页面<br />
+------------以上是宽松模式，可以在断网情况下使用。<br />
+这种情况下，用户取消，没有联网，无ssl，服务器没有匹配等，都不影响使用。<br />
+<br />
+<br />
+<strong>数据结构</strong>：<br />
+struct s_upgrade{<br />
+&nbsp; &nbsp; QString appname;<br />
+&nbsp; &nbsp; QString appversion;<br />
+&nbsp; &nbsp; QString forceupgradeFlag;<br />
+&nbsp; &nbsp; QString urlString;<br />
+&nbsp; &nbsp; QString forceLockFlag;<br />
+&nbsp; &nbsp; QString disableuseFlag;<br />
+};<br />
+<br />
+<br />
+/*<br />
+&nbsp;* 使用说明<br />
+// 当前版本号-----会跟服务器的比对，看谁新<br />
+#define SW_Version "1.0"<br />
+//软件名-----会跟服务器的比对<br />
+#define SW_appName "sysmonitor"<br />
+<br />
+//强制模式-----此选项受服务器控制， 表示是否会强制模式，也就是严格模式。如果是true,则必须联网，<br />
+//并接受服务器控制<br />
+//平时选择false<br />
+*/<br />
+<br />
+<br />
+<br />

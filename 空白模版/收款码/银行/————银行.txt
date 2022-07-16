@@ -1,0 +1,52 @@
+
+
+
+开户行(bank's name)
+	平安银行深圳分行高新技术区支行
+账号(bank account number)
+	6222980022660759
+户名(account's name)
+	王志彬
+
+
+开户行(bank's name)
+	中国银行南城支行
+账号(bank account number)
+	6217857000062342496
+户名(account's name)
+	王志彬
+
+
+开户行(bank's name)
+	工商银行深圳南油支行
+账号(bank account number)
+	6212264000016195253
+户名(account's name)
+	王志彬
+
+
+
+
+
+
+开户行(bank's name)
+	平安银行深圳分行高新技术区支行
+账号(bank account number)
+	6222980022660759
+
+
+
+开户行(bank's name)
+	中国银行南城支行
+账号(bank account number)
+	6217857000062342496
+
+
+开户行(bank's name)
+	工商银行深圳南油支行
+账号(bank account number)
+	6212264000016195253
+
+
+
+

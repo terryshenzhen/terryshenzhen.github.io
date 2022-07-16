@@ -1,0 +1,50 @@
+升级规范：格式为：
+{name;version;forceupgrade;url;forceLock} 
+name----app名称；
+version--app版本号；
+forceupgrade是否强制升级。强制升级时，用户如果不升级则无法进入软件；没有强制升级时，
+用户可以自由选择；
+url------需要链接进去的页面
+------------以上是宽松模式，可以在断网情况下使用。
+这种情况下，用户取消，没有联网，无ssl，服务器没有匹配等，都不影响使用。
+
+
+
+------------以下是严格模式，必须在连网情况下使用。
+这种情况下，直接锁定无法使用。
+
+forceLock--强行锁定。此项打开后，软件锁定。------仅由web端控制，因此必须联网才有意义
+disableuse--有这个字段，说明禁止使用，在app上提示过期；该字段需要app配合使用。
+也就是说，app处，需要联网取得这个字段才可以使用，否则不能使用
+
+例如，这个是appForcetest,强制锁定
+{appForcetest;1.5;false;https://xxx/nitor.html;true;disableuse}
+
+
+
+struct s_upgrade{
+    QString appname;
+    QString appversion;
+    QString forceupgradeFlag;
+    QString urlString;
+    QString forceLockFlag;
+    QString disableuseFlag;
+};
+
+
+
+/*
+ * 使用说明
+// 当前版本号-----会跟服务器的比对，看谁新
+#define SW_Version "1.0"
+//软件名-----会跟服务器的比对
+#define SW_appName "sysmonitor"
+
+//强制模式-----此选项受服务器控制， 表示是否会强制模式，也就是严格模式。如果是true,则必须联网，
+//并接受服务器控制
+//平时选择false
+*/
+
+
+
+
