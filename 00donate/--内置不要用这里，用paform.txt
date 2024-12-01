@@ -1,0 +1,4 @@
+
+因为内置html的时候要用webengine模块，它只能在MSVC下运行，且
+运行后各种问题。
+payform没有任何要求。

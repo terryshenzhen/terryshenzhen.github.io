@@ -14,15 +14,74 @@ https://zaixianwangyebianji.bmcx.com/
 
 
 插入视频：
+=======☆☆☆☆☆☆=======<br />
+
+<strong><span style="font-size:16px;">STM32 cubeMX + HAL 库 实现 MDK观察全局变量</span></strong>
+<br />
+<br />
+<iframe src="https://www.bilibili.com/video/BV1rB4y1k7v8?spm_id_from=333.999.0.0&vd_source=f2a20f3819fa6934ca6ec995b8700bf3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px; height: 430px; max-width: 100%"> </iframe>
+<br />
+
+
+插入图片
+<br />=====================================<br />
+<img src="./APP_mainUI.jpg"\/>
+<br />
+
+
+=======☆☆☆☆☆☆=======<br />
+
+<strong><span style="font-size:16px;">xxxx</span></strong>
+<br />
+<br />
+<iframe src="XXXXXX" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px; height: 430px; max-width: 100%"> </iframe>
+<br />
+
+
+
+
+
+
+插入链接：
 <p>
-	使用指导视频：&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+	<a href="https://raspberrypi-guide.github.io/electronics/image-and-video-recording" target="_blank"><strong>树莓派官网</strong></a> 
 </p>
-<br />
-<iframe src="https://www.bilibili.com/video/BV18Y411N7Tj?spm_id_from=333.999.0.0&vd_source=f2a20f3819fa6934ca6ec995b8700bf3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px; height: 430px; max-width: 100%"> </iframe>
-<br />
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+
+
+
+
+https://book.openmv.cc/
+
 
 
 百度网盘免密码：
+
+下载链接1：
+<a href="https://pan.baidu.com/s/1iwjWdsOCgcmN0o4YoYDywQ?pwd=aaaa"><font size="4" color="blue">点击下载Bus hound</font></a></br>
+
+
+=====☆☆☆☆☆=====
+<p>
+	<strong>Mantis BUG 管理系统--搭建全套工具</strong>
+</p>
+<p>
+缺陷管理平台Mantis，也做MantisBT，全称Mantis Bug Tracker。开源，免费，性能好！
+<br />
+<a href="https://pan.baidu.com/s/1hj2mcrruuNZX63XqPTKaow?pwd=aaaa"><font size="4" color="blue">点击下载Mantis Bug Tracker</font></a></br>
+</p>
+<p>
+</p>
+
+
+
+
+
 
 我们获取下载链接后在后面加?pwd=提取码
 
