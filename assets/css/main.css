@@ -1922,7 +1922,7 @@ input, select, textarea {
 	}
 
 	#footer-wrapper {
-		padding: 6em 0 8em 0;
+		padding: 1em 0 2em 0;
 	}
 
 /* Header */
@@ -2253,7 +2253,7 @@ input, select, textarea {
 			}
 
 			#footer-wrapper {
-				padding: 6em 0 4em 0;
+				padding: 1em 0 2em 0;
 			}
 
 		/* Header */
@@ -2626,7 +2626,7 @@ input, select, textarea {
 			}
 
 			#main-wrapper, #footer-wrapper {
-				padding: 40px 30px 40px 30px;
+				padding: 1px 10px 10px 10px;
 			}
 
 		/* Logo */
